@@ -1,0 +1,99 @@
+doctype html
+html
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title Social Pets
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous')
+    link(rel='stylesheet' href='/stylesheets/layout.css'  type='text/css')
+    link(rel='stylesheet' href='/stylesheets/mediaqueries.css' type='text/css' media='all')
+  body
+    //- HEADER
+    .wrapper.row1
+      header#header
+        #hgroup
+          h1
+            a(href='#') Social Pet
+          h2 Choose your favorite!
+        nav#topnav
+          ul.topnav.clear
+            li.active
+              a(href='../index.html')
+                i#homeIcon.fas.fa-home  
+                |  HOMEPAGE
+            li
+              a(href='gallery.html')
+                i#photosIcon.fas.fa-camera
+                |  PHOTOS
+            li.last
+              a(href='portfolio.html')
+                i#galleryIcon.fas.fa-heart  
+                |  FAVORITES
+        .clear
+    
+    .wrapper.filterRow
+      .colBox
+        .select
+          select.select-text(required='')
+            option(value='' disabled='' selected='')
+            option(value='1') All
+            option(value='2') Akita
+            option(value='3') Beagle
+            option(value='4') Komondor
+            option(value='5') Chow-chow
+            option(value='6') Chihuahua
+            option(value='7') Fox Terrier
+            option(value='8') Great Dane
+            option(value='9') Collie
+            option(value='10') Pomsky
+            option(value='11') Boxer
+          span.select-highlight
+          span.select-bar
+          label.select-label BREED                
+      .colBox
+        .select
+          select.select-text(required='')
+            option(value='' disabled='' selected='')
+            option(value='1') All
+            option(value='2') Small
+            option(value='3') Medium
+            option(value='4') Large
+          span.select-highlight
+          span.select-bar
+          label.select-label SIZE          
+      .colBox
+        .select
+          select.select-text(required='')
+            option(value='' disabled='' selected='')
+            option(value='0,1,2,3') 0-3
+            option(value='4,5,6') 4-6
+            option(value='7') 7 and more...
+          span.select-highlight
+          span.select-bar
+          label.select-label AGE
+      .colBox
+        button#filter
+          span APPLY FILTER
+
+    //- CONTENT
+    .wrapper.row2
+      block content
+    
+    //- FOOTER
+    .wrapper.row3
+      footer#copyright.clear
+        p.fl_left
+          | Copyright &copy; 2018 - All Rights Reserved - 
+          a(href='#') Domain Name
+        p.fl_right
+          a(target='_blank' href='https://www.facebook.com/')
+            i.socialFooter.fab.fa-facebook
+          |  
+          a(target='_blank' href='https://www.instagram.com/')
+            i.socialFooter.fab.fa-instagram
+          |  
+          a(target='_blank' href='https://twitter.com/')
+            i.socialFooter.fab.fa-twitter
+  script(src='/javascripts/jquery-3.3.1.min.js')
+  script(src='/javascripts/jquery-mobilemenu.min.js')
+  script(src='/javascripts/favorites.js')

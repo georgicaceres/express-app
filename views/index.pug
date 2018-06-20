@@ -1,0 +1,29 @@
+extends layout
+
+block content
+  #container
+    //- content body
+    section#gallery.clear
+      figure
+        ul#images
+          for dog in dogs
+            li
+              a(href='#')
+                img(src='/images/' + dog.image alt='Dog Image')
+              i.heart(class=dog.heart + ' fa-heart' id=dog.image)
+              div
+                button#view 
+                  span VIEW
+    .pagination
+      ul
+        li.prev
+          a(href='#')  &laquo; Previous
+        
+        - for (var i = 1; i < numPages; i++) {
+          li(id=i)
+            a(href='#') 
+              strong #{i}            
+        - }
+        
+        li.next
+          a(href='#') Next &raquo;
