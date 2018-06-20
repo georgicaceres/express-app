@@ -16,14 +16,22 @@ block content
                   span VIEW
     .pagination
       ul
-        li.prev
+        li.prev(class= page === 1 ? "disabled" : "enable" )
           a(href='#')  &laquo; Previous
         
-        - for (var i = 1; i < numPages; i++) {
-          li(id=i)
+        - for (var i = 1; i < page; i++) {
+          li(class="page" id=i)
+            a(href='#') 
+              strong #{i}            
+        - }
+        li(class="page current")
+          a.activePage(href='#') 
+            strong #{page}
+        - for (var i = page + 1; i <= numPages; i++) {
+          li(class="page" id=i)
             a(href='#') 
               strong #{i}            
         - }
         
-        li.next
+        li.next(class= page === numPages ? "disabled" : "enable" )
           a(href='#') Next &raquo;
