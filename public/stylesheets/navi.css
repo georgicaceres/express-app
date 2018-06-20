@@ -49,3 +49,4 @@ nav ul{margin:0; padding:0; list-style:none;}
 #container .pagination .next{margin:0;}
 #container .pagination a, #container .pagination .current strong, #container .pagination .splitter strong{display:inline-block; padding:2px 6px; margin:0 2px 0 0;}
 #container .pagination a{border:1px solid #DFDFDF;}
+#container .pagination .current a {border-color: black};

@@ -122,7 +122,7 @@ aside h2{padding-bottom:8px; font-size:1.2em; text-transform:uppercase; border-b
   overflow: hidden;
   border-width: 0;
   outline: none;
-  border-radius: 2px;
+  border-radius: 4px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
   background-color: #fa745e;
   color: #ecf0f1;
@@ -275,4 +275,15 @@ aside h2{padding-bottom:8px; font-size:1.2em; text-transform:uppercase; border-b
 	left: 0;
 	pointer-events: none;
 	opacity: 0.5;
+}
+
+/* PREV AND NEXT BUTTONS ================================== */
+.disabled a {
+  cursor: default;
+  color: grey;
+}
+
+/* IMAGES BOX ================================== */
+#images li img {
+  border-radius: 4px;
 }
