@@ -1,4 +1,6 @@
 const service = {};
+const breeds = ["Akita", "Beagle", "Boxer", "Chihuahua", "Chow-Chow", "Collie",
+    "Fox Terrier", "Golden Retriever", "Great Dane", "Komondor", "Kuvassz", "Maltese", "Pomsky", "Pug"];
 const dogs = [
 {name: "Gus & Hank", breed:"Akita", size: "Small", age: 2, image: "akita.jpg", heart: "far"},
 {name: "Apollo", breed:"Akita", size: "Large", age: 6, image: "akita1.jpg", heart: "far"},
@@ -50,15 +52,21 @@ const dogs = [
 {name: "Jedi & Yoda", breed: "Pug", size: "Small", age: 5, image: "pug3.jpg", heart: "far"},
 {name: "Darwin", breed: "Pug", size: "Medium", age: 11, image: "pug4.jpg", heart: "far"}];
 
+service.getBreeds = function() {
+    return breeds;
+};
+
 service.getAllDogs = function() {
     return dogs;
 };
 
-service.getFilterDogs = function(breed, size, age) {
+service.getFilterDogs = function(breed, size, age, favorite) {
+    console.log('filter', favorite)
     return dogs
         .filter(dog => !breed || dog.breed === breed)
         .filter(dog => !size || dog.size === size)
         .filter(dog => !age || age.split(",").indexOf(String(dog.age)) >= 0 )
+        .filter(dog => !favorite || dog.heart === "fas")
     }
 
 service.getFavorites = function() {
