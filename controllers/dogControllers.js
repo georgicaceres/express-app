@@ -1,28 +1,34 @@
 const dogService = require('../services/dogService');
 const self = {};
+const imagesPerPage = 3;
 
 self.filter = function(req, res, next) {
-  let dogs = dogService.getFilterDogs(null, null, null);
-  const imagesPerPage = 3;
-  const page = req.params.page || 1;
-  const numPages = Math.ceil(dogs.length/imagesPerPage);
-  dogs = dogs.slice((page - 1) * imagesPerPage, (page * imagesPerPage))
-  res.render('index', { dogs, numPages });
+    let dogs = dogService.getFilterDogs(req.query.breed, req.query.size, req.query.age);
+    const page = parseInt(req.query.page) || 1;
+    const numPages = Math.ceil(dogs.length/imagesPerPage);
+    dogs = dogs.slice((page - 1) * imagesPerPage, (page * imagesPerPage));
+    if (dogs.length > 0) {
+        res.render('index', { dogs, numPages, page });
+    } else {
+        res.render('empty', {message: "Sorry, there is no match. Try another filter!"})
+    }
 };
 
-self.specificBreed = function(req, res, next) {
-  let allBreed = dogService.getDogByBreed(req.params.breed);
-  res.send(allBreed);
+self.favorites = function(req, res, next) {
+    let dogs = dogService.getFavorites();
+    const page = parseInt(req.query.page) || 1;
+    const numPages = Math.ceil(dogs.length/imagesPerPage);
+    dogs = dogs.slice((page - 1) * imagesPerPage, (page * imagesPerPage));
+    if (dogs.length > 0) {
+        res.render('index', { dogs, numPages, page });
+    } else {
+        res.render('empty', {message: "Sorry, there is no favorites yet. Try choosing yours!"})
+    }
 };
 
-self.specificSize = function(req, res, next) {
-  let allSize = dogService.getDogsBySize(req.params.size);
-  res.send(allSize);
-};
-
-self.specificAge = function(req, res, next) {
-  let allAge = dogService.getDogsByAge(req.params.age);
-  res.send(allAge);
+self.getDetailOf = function(req, res, next) {
+    let dog = dogService.getDetailOf(req.params.dog);
+    res.render('detail', {dog})
 }
 
 

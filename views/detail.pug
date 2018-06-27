@@ -1,0 +1,21 @@
+extends layout
+
+block content
+    #container
+        section#portfolio.clear
+            ul
+                li.clear
+                    article
+                        figure
+                            figcaption
+                                header Name(s): #{dog.name} 
+                                    i.heart(class=dog.heart + ' fa-heart hd' id=dog.image)
+                                ul
+                                    li BREED: #{dog.breed}
+                                    li SIZE: #{dog.size}
+                                    li AGE: #{dog.age}
+                                p
+                                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices tristique dui venenatis auctor. Donec condimentum tincidunt ex, non fermentum dui mollis sed. Pellentesque eros ipsum, gravida suscipit consectetur ut, facilisis mattis orci. Sed lacinia orci in ex porttitor cursus. Suspendisse nec enim justo. In tempus suscipit felis, quis porttitor metus lacinia eget. Fusce rutrum at orci id dapibus. Etiam fermentum eget odio sit amet lacinia.
+                            a.imgholder(href='')
+                                img(src='/images/' + dog.image  alt="dog image")
+                            

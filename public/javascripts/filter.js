@@ -1,8 +1,9 @@
 $(document).ready(function() {
   $(document).on('click', '#filter', function() {
+    console.log('estoy acá')
     let breed = escape($('#selectBreed').val() || '');
     let size = $('#selectSize').val() || '';
-    let age = $('#selectAge').val()|| '';    
+    let age = $('#selectAge').val()|| '';
 
     $('.wrapper.row2').load(`/filter?breed=${breed}&size=${size}&age=${age} #container`);
 

@@ -1,13 +1,5 @@
 @charset "utf-8";
 @import url('https://fonts.googleapis.com/css?family=Jua');
-/*
-Template Name: RS-2 Clean
-Author: <a href="https://www.os-templates.com/">OS Templates</a>
-Author URI: https://www.os-templates.com/
-Licence: Free to use under our free template licence terms
-Licence URI: https://www.os-templates.com/template-terms
-File: Gallery CSS
-*/
 
 #gallery{display:block; width:100%; line-height:1.6em;}
 #gallery figure{}
@@ -19,94 +11,24 @@ File: Gallery CSS
 #gallery li.large{display:block; width:65.625%;}
 #gallery li.last{margin-right:0;}
 
-#homeIcon {
-  color: #00d1b2;
-  font-size: 14px
-}
-
-#photosIcon {
-  color: #23d160;
-  font-size: 14px;
-}
-
-#galleryIcon {
-  color: red;
-  font-size: 14px;
-}
-
-.socialFooter {
-  font-size: 20px;
-}
-
-.fa-facebook {
-  color: #4267b2;
-}
-
-.fa-instagram {
-  color: #e4405f;
-}
-
-.fa-twitter {
-  color: #55acee;
-}
-
-.heart {
-  position: absolute;
-  bottom: 5px;
-  left: 5px;
-  color: red;
-  font-size: 30px;
-  cursor: pointer
-};
+/* Heart gallery and heart detail */
+.hg {position: absolute; bottom: 5px; left: 5px; color: red; font-size: 30px; cursor: pointer}
+.hd {color: red; font-size: 25px; cursor: pointer}
 
 /* FILTER PANEL */
-
 $dropdown-main-color: rgba(46, 46, 46, 0.4);
 $dropdown-basic-height: 40px;
 $dropdown-basic-border-width: 2px;
 $dropdown-basic-border-radius: 2px;
 
-.jui-dropdown {
-  position: relative;
-  position: inline-block;
-}
+.jui-dropdown {position: relative; position: inline-block}
 
-.jui-dropdown__caret {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding-right: 12px;
-  color: rgba(46, 46, 46, 0.4);
-  cursor: pointer;
-  z-index: 1;
-  pointer-events: none;
-}
-.jui-dropdown__caret:before {
-  font-family: "FontAwesome";
-  content: "\f0d7";
-}
+.jui-dropdown__caret {position: absolute; top: 0; right: 0; padding-right: 12px; color: rgba(46, 46, 46, 0.4);
+    cursor: pointer; z-index: 1; pointer-events: none}
+.jui-dropdown__caret:before {font-family: "FontAwesome"; content: "\f0d7"}
 
-.jui-dropdown__select {
-  border-radius: 2px;
-  border: 2px solid rgba(46, 46, 46, 0.4);
-  box-sizing: border-box;
-  font-family: inherit;
-  font-size: 16px;
-  height: ;
-  margin: 4px 0;
-  padding: 0 27px 0 10px;
-  user-select: none;
-  cursor: pointer;
-  text-overflow: ellipsis;
-  outline: none;
-  background: white;
-  appearance: none;
-}
+.jui-dropdown__select {border-radius: 2px; border: 2px solid rgba(46, 46, 46, 0.4); box-sizing: border-box;
+    font-family: inherit; font-size: 16px; margin: 4px 0; padding: 0 27px 0 10px; user-select: none; cursor: pointer;
+    text-overflow: ellipsis; outline: none; background: white; appearance: none}
 
-.jui-label {
-  cursor: pointer;
-  display: block;
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 24px;
-}
+.jui-label {cursor: pointer; display: block; font-size: 16px; font-weight: bold; line-height: 24px}

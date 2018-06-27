@@ -1,15 +1,17 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var likeRouter = require('./routes/like');
-var unlikeRouter = require('./routes/unlike');
+const indexRouter = require('./routes/index');
+const filterRouter = require('./routes/filter');
+const favoritesRouter = require('./routes/favorites');
+const detailsRouter = require('./routes/details');
+const likeRouter = require('./routes/like');
+const unlikeRouter = require('./routes/unlike');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,7 +24,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/filter', filterRouter);
+app.use('/favorites', favoritesRouter);
+app.use('/details', detailsRouter);
 app.use('/like', likeRouter);
 app.use('/unlike', unlikeRouter);
 

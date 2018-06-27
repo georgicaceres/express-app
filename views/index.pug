@@ -1,7 +1,53 @@
 extends layout
 
+block filter
+    .colBox
+      .select
+        select.select-text(id='selectBreed' required='')
+          option(value='' disabled='' selected='')
+          option(value='') All
+          option(value='Akita') Akita
+          option(value='Beagle') Beagle
+          option(value='Komondor') Komondor
+          option(value='Chow-chow') Chow-chow
+          option(value='Chihuahua') Chihuahua
+          option(value='Fox Terrier') Fox Terrier
+          option(value='Great Dane') Great Dane
+          option(value='Collie') Collie
+          option(value='Pomsky') Pomsky
+          option(value='Pug') Pug
+          option(value='Boxer') Boxer
+        span.select-highlight
+        span.select-bar
+        label.select-label BREED                
+    .colBox
+      .select
+        select.select-text(id='selectSize' required='')
+          option(value='' disabled='' selected='')
+          option(value='') All
+          option(value='Small') Small
+          option(value='Medium') Medium
+          option(value='Large') Large
+        span.select-highlight
+        span.select-bar
+        label.select-label SIZE          
+    .colBox
+      .select
+        select.select-text(id='selectAge' required='')
+          option(value='' disabled='' selected='')
+          option(value='') All
+          option(value='0,1,2,3') 0-3
+          option(value='4,5,6') 4-6
+          option(value='7,8,9,10,11,12,13') 7 and more...
+        span.select-highlight
+        span.select-bar
+        label.select-label AGE
+    .colBox
+      button#filter
+        span APPLY FILTER
+
 block content
-  #container
+ #container
     //- content body
     section#gallery.clear
       figure
@@ -10,10 +56,11 @@ block content
             li
               a(href='#')
                 img(src='/images/' + dog.image alt='Dog Image')
-              i.heart(class=dog.heart + ' fa-heart' id=dog.image)
+              i.heart(class=dog.heart + ' fa-heart hg' id=dog.image)
               div
-                button#view 
-                  span VIEW
+                a(href='/details/' + dog.name) 
+                    button#view 
+                        span VIEW
     .pagination
       ul
         li.prev(class= page === 1 ? "disabled" : "enable" )
