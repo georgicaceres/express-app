@@ -1,4 +1,4 @@
-extends layout
+extends index
 
 block filter
     .colBox
@@ -36,41 +36,3 @@ block filter
     .colBox
         button#filter
             span APPLY FILTER
-
-block content
- #container
-    //- content body
-    section#gallery.clear
-      figure
-        ul#images
-          for dog in dogs
-            li
-              a(href='#')
-                img(src='/images/' + dog.image alt='Dog Image')
-              i.heart(class=dog.heart + ' fa-heart hg' id=dog.image)
-              div
-                a(href='/details/' + dog.name) 
-                    button#view 
-                        span VIEW
-    .pagination
-      ul
-        li.prev(class= page === 1 ? "disabled" : "enable" )
-          a(href='#')  &laquo; Previous
-        
-        - for (var i = 1; i < page; i++) {
-          li(class="page" id=i)
-            a(href='#') 
-              strong #{i}            
-        - }
-        li(class="page current")
-          a.activePage(href='#') 
-            strong #{page}
-        - for (var i = page + 1; i <= numPages; i++) {
-          li(class="page" id=i)
-            a(href='#') 
-              strong #{i}            
-        - }
-        
-        li.next(class= page === numPages ? "disabled" : "enable" )
-          a(href='#') Next &raquo;
-    

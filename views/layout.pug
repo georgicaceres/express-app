@@ -18,27 +18,22 @@ html
           h2 Choose your favorite!
         nav#topnav
           ul.topnav.clear
-            li.active
+            li(class= active === "homepage" ? "active" : "")
               a(href='/')
                 i#homeIcon.fas.fa-home  
                 |  HOMEPAGE
-            li
+            li(class= active === "filter" ? "active" : "")
               a(href='/filter')
                 i#filterIcon.fas.fa-search
                 |  FILTER
-            li.last
+            li.last(class= active === "favorites" ? "active" : "")
               a(href='/favorites')
                 i#galleryIcon.fas.fa-heart  
                 |  FAVORITES
         .clear
     
-    
-    .wrapper.filterRow
-        block filter
-    //- CONTENT
-    .wrapper.row2
-      block content
-    
+    block content
+        
     //- FOOTER
     .wrapper.row3
       footer#copyright.clear
