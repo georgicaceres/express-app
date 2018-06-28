@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight
   max-width: 960px;
 }
 
-#filter, #view {
+#filter, #view, #all {
   padding: 0;
   overflow: hidden;
   border-width: 0;
@@ -106,15 +106,16 @@ h1, h2, h3, h4, h5, h6{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight
   background-color: #fa745e;
   color: #ecf0f1;
   transition: background-color .3s;
+  cursor: pointer
 }
 
-#filter:hover, #view:hover, #filter:focus, #view:focus {background-color: #745EFA}
+#filter:hover, #view:hover,#all:hover, #filter:focus, #view:focus, #all:focus {background-color: #A966FF; color: black; font-weight: bold}
 
-#filter > *, #view * {position: relative}
+#filter > *, #view > *, #all > * {position: relative}
 
-#filter span, #view span {display: block; padding: 12px 24px}
+#filter span, #view span, #all span {display: block; padding: 12px 24px}
 
-#filter:before, #view:before {
+#filter:before, #view:before, #all:before {
   content: "";
   position: absolute;
   top: 50%;
@@ -129,12 +130,14 @@ h1, h2, h3, h4, h5, h6{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  cursor: pointer
 }
 
-#filter:active:before, #view:active:before {
+#filter:active:before, #view:active:before, #all:active:before {
   width: 120%; padding-top: 120%; transition: width .2s ease-out, padding-top .2s ease-out}
 
 #view {position: absolute; bottom: 5px; right: 5px}
+.seeAll {width: 100%; display: flex; justify-content: space-around}
 
 .select {position: relative; width: 200px}
 

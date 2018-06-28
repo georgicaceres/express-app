@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport' content='width=device-width, initial-scale=1.0')
@@ -9,32 +9,32 @@ html
     link(rel='stylesheet' href='/stylesheets/layout.css'  type='text/css')
     link(rel='stylesheet' href='/stylesheets/mediaqueries.css' type='text/css' media='all')
   body
-    //- HEADER
+    //-------------------- Header --------------------
     .wrapper.row1
       header#header
         #hgroup
-          h1
-            a(href='/') Social Pet        
-          h2 Choose your favorite!
+            h1
+                a(href='/') Social Pet        
+            h2 Choose your favorite!
         nav#topnav
-          ul.topnav.clear
-            li(class= active === "homepage" ? "active" : "")
-              a(href='/')
-                i#homeIcon.fas.fa-home  
-                |  HOMEPAGE
-            li(class= active === "filter" ? "active" : "")
-              a(href='/filter')
-                i#filterIcon.fas.fa-search
-                |  FILTER
-            li.last(class= active === "favorites" ? "active" : "")
-              a(href='/favorites')
-                i#galleryIcon.fas.fa-heart  
-                |  FAVORITES
+            ul.topnav.clear
+                li(class= active === "homepage" ? "active" : "")
+                    a(href='/')
+                        i#homeIcon.fas.fa-home  
+                        |  HOMEPAGE
+                li(class= active === "filter" ? "active" : "")
+                    a(href='/filter')
+                        i#filterIcon.fas.fa-search
+                        |  FILTER
+                li.last(class= active === "favorites" ? "active" : "")
+                    a(href='/favorites')
+                        i#galleryIcon.fas.fa-heart  
+                        |  FAVORITES
         .clear
-    
+    //-------------------- Content --------------------
     block content
         
-    //- FOOTER
+    //-------------------- Footer --------------------
     .wrapper.row3
       footer#copyright.clear
         p.fl_left
@@ -49,8 +49,10 @@ html
           |  
           a(target='_blank' href='https://twitter.com/')
             i.socialFooter.fab.fa-twitter
-  script(src='/javascripts/jquery-3.3.1.min.js')
-  script(src='/javascripts/jquery-mobilemenu.min.js')
-  script(src='/javascripts/favorites.js')
-  script(src='/javascripts/filter.js')
-  script(src='/javascripts/pagination.js')
+                
+    //-------------------- Scripts --------------------
+    script(src='/javascripts/jquery-3.3.1.min.js')
+    script(src='/javascripts/jquery-mobilemenu.min.js')
+    script(src='/javascripts/favorites.js')
+    script(src='/javascripts/filter.js')
+    script(src='/javascripts/pagination.js')

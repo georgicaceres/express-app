@@ -6,7 +6,7 @@
 #gallery figure header{margin:0 0 15px 0; padding:0; font-size:1.8em; line-height:normal;}
 #gallery figure figcaption{display:block; width:100%; margin:0; padding:0; clear:both;}
 #gallery ul {display: flex; justify-content: space-evenly;}
-#gallery ul, #gallery img{margin:0; padding:0; list-style:none;}
+#gallery ul, #gallery img{margin:0; padding:0; list-style:none; cursor: default;}
 #gallery li {position: relative}
 #gallery li.large{display:block; width:65.625%;}
 #gallery li.last{margin-right:0;}

@@ -1,9 +1,10 @@
 extends layout
 
 block content
+    //-------------------- Filters--------------------
     .wrapper.filterRow
         block filter
-    //- CONTENT
+    //-------------------- Gallery --------------------
     .wrapper.row2
         #container
             section#gallery.clear
@@ -18,15 +19,17 @@ block content
                                     a(href='/details/' + dog.name) 
                                         button#view 
                                             span VIEW
+                                            
+            //-------------------- Pagination--------------------
             .pagination
                 ul
                     li.prev(class= page === 1 ? "disabled" : "enable" )
                         a(href='#')  &laquo; Previous
                 
                     - for (var i = 1; i < page; i++) {
-                      li(class="page" id=i)
-                        a(href='#') 
-                          strong #{i}            
+                        li(class="page" id=i)
+                            a(href='#') 
+                                strong #{i}            
                     - }
                     li(class="page current")
                         a.activePage(href='#') 
