@@ -16,7 +16,11 @@ self.filter = function(req, res, next) {
     if (result.dogs.length > 0) {
         res.render('filter', { active: 'filter', breeds, ...result });
     } else {
-        res.render('empty', {active: 'filter', message: "Sorry, there is no match. Try again!"})
+        res.render('empty', {
+            active: 'filter',
+            message: "Sorry, there is no match. Try again!",
+            image: "dog-empty.jpg"
+        })
     }
 };
 
@@ -32,7 +36,11 @@ self.favorites = function(req, res, next) {
     if (result.dogs.length > 0) {
         res.render('index', {active: 'favorites', ...result });
     } else {
-        res.render('empty', {active: 'favorites', message: "Sorry, there is no favorites yet. Try choosing yours from the list!"})
+        res.render('empty', {
+            active: 'favorites',
+            message: "Sorry, there is no favorites yet. Try choosing yours from the list!",
+            image: "dog-like.jpg"
+        })
     }
 };
 

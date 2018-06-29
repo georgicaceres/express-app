@@ -6,49 +6,36 @@
 html{overflow-y:scroll;}
 body{margin:0; padding:0; font-size:100%; font-family: 'Prosto One', cursive; color:#666666; background-color:#FFFFFF;}
 
-.justify{text-align:justify;}
-.bold{font-weight:bold;}
-.center{text-align:center;}
-.right{text-align:right;}
-.nostart{margin:0; padding:0; list-style:none;}
-.hidden{display:none;}
-
 .clear::after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
 .clear{display:block; clear:both;}
-html[xmlns] .clear{display:block;}
 * html .clear{height:1%;}
 
 a{outline:none; text-decoration:none;}
 
-.fl_left, .imgl{float:left;}
-.fl_right, .imgr{float:right;}
+.fl_left {float:left;}
+.fl_right {float:right;}
 
 img{width:auto; max-width:100%; height:auto; margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
-.imgholder, .imgl, .imgr{padding:4px; border:1px solid #D6D6D6; text-align:center;}
+.imgholder{padding:4px; border:1px solid #D6D6D6; text-align:center;}
 .imgl{margin:0 15px 15px 0; clear:left;}
 .imgr{margin:0 0 15px 15px; clear:right;}
 
 /* ----------------------------------------------HTML 5 Overrides------------------------------------- */
 
-article, aside, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
-
-/* ----------------------------------------------Responsive Videos------------------------------------- */
-
-.video{display:block; position:relative; width:100%; height:0; margin:0; padding:0 0 56.25% 0; /* using a 16:9 aspect ratio, the height is 56.25% of the width (9/16=0.5625) */}
-.video iframe{display:block; position:absolute; width:100%; height:100%; margin:0; padding:0;}
+article, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
 
 /* ----------------------------------------------Wrapper------------------------------------- */
 
 div.wrapper{}
-.row1 a, .row2 a, .row3 a, .row4 a, .row5 a{color:#FF9900; background-color:#FFFFFF;}
+.row1 a, .row2 a, .row3 a{color:#FF9900; background-color:#FFFFFF;}
 .row1, .row1 a{color:#666666; background-color:#FFFFFF;}
 .row2, .row2 a{}
 .row3, .row3 a{color:#666666; background-color:#FFFFFF;}
-.row3 {position:absolute; bottom:0; min-width: 100%;}
+.row3 {position:fixed; bottom:0; min-width: 100%;}
 
 /* ----------------------------------------------Generalise------------------------------------- */
 
-h1, h2, h3, h4, h5, h6{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight:normal; line-height:normal;}
+h1, h2{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight:normal; line-height:normal;}
 
 #header, #container, #copyright{margin:0 auto; font-size:.8em;}
 
@@ -88,55 +75,48 @@ h1, h2, h3, h4, h5, h6{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight
 
 /* ----------------------------------------------Filter Select------------------------------------- */
 
-.filterRow {
-  margin: 20px auto;
-  margin-bottom: 0px;
-  display: flex;
-  justify-content: space-around;
-  max-width: 960px;
+.filterRow {margin: 20px auto; margin-bottom: 0px; display: flex; justify-content: space-around; max-width: 960px}
+
+#filter, #view{
+    padding: 0;
+    overflow: hidden;
+    border-width: 0;
+    outline: none;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+    background-color: #fa745e;
+    color: #ecf0f1;
+    transition: background-color .3s;
+    cursor: pointer
 }
 
-#filter, #view, #all {
-  padding: 0;
-  overflow: hidden;
-  border-width: 0;
-  outline: none;
-  border-radius: 4px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-  background-color: #fa745e;
-  color: #ecf0f1;
-  transition: background-color .3s;
-  cursor: pointer
+#filter:hover, #view:hover, #filter:focus, #view:focus {background-color: #A966FF; color: black; font-weight: bold}
+#filter > *, #view > *{position: relative}
+#filter span, #view span {display: block; padding: 12px 24px}
+
+#filter:before, #view:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: block;
+    width: 0;
+    padding-top: 0;
+    border-radius: 100%;
+    background-color: rgba(236, 240, 241, .3);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer
 }
 
-#filter:hover, #view:hover,#all:hover, #filter:focus, #view:focus, #all:focus {background-color: #A966FF; color: black; font-weight: bold}
-
-#filter > *, #view > *, #all > * {position: relative}
-
-#filter span, #view span, #all span {display: block; padding: 12px 24px}
-
-#filter:before, #view:before, #all:before {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  display: block;
-  width: 0;
-  padding-top: 0;
-  border-radius: 100%;
-  background-color: rgba(236, 240, 241, .3);
-  -webkit-transform: translate(-50%, -50%);
-  -moz-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  -o-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  cursor: pointer
-}
-
-#filter:active:before, #view:active:before, #all:active:before {
-  width: 120%; padding-top: 120%; transition: width .2s ease-out, padding-top .2s ease-out}
+#filter:active:before, #view:active:before {
+    width: 120%; padding-top: 120%; transition: width .2s ease-out, padding-top .2s ease-out}
 
 #view {position: absolute; bottom: 5px; right: 5px}
+
 .seeAll {width: 100%; display: flex; justify-content: space-around}
 
 .select {position: relative; width: 200px}
@@ -175,7 +155,7 @@ h1, h2, h3, h4, h5, h6{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight
 }
 
 
-/* LABEL ======================================= */
+/*----------------------Label----------------------- */
 .select-label {
 	color: rgba(0,0,0, 0.26); font-size: 16px; font-weight: normal;	position: absolute;	pointer-events: none;
 	left: 0; top: 10px;	transition: 0.2s ease all
@@ -186,7 +166,7 @@ h1, h2, h3, h4, h5, h6{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight
 	color: #fa745e;	top: -8px; transition: 0.2s ease all; font-size: 14px;
 }
 
-/* BOTTOM BARS ================================= */
+/*----------------------Bottom Bars----------------------- */
 .select-bar {position: relative; display: block; width: 200px}
 
 .select-bar:before, .select-bar:after {content: ''; height: 2px; width: 0; bottom: 1px;	position: absolute;
@@ -199,38 +179,29 @@ h1, h2, h3, h4, h5, h6{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight
 /* active state */
 .select-text:focus ~ .select-bar:before, .select-text:focus ~ .select-bar:after {width: 50%}
 
-/* HIGHLIGHTER ================================== */
+/*----------------------Highlighter----------------------- */
 .select-highlight {position: absolute; height: 60%;	width: 100px; top: 25%;	left: 0; pointer-events: none; opacity: 0.5}
 
-/* PREV AND NEXT BUTTONS ================================== */
+/*----------------------Prev and Next buttons----------------------- */
 .disabled a {cursor: default; color: grey}
 
-/* IMAGES BOX ================================== */
+/*----------------------Image's Box----------------------- */
 #images li img {border-radius: 4px}
 
-/* EMPTY SEARCH MESSAGE ================================== */
-.empty {text-align: center; font-size: 25px}
+/*----------------------Empty Search Message and Error message----------------------- */
+.empty, .error {text-align: center; font-size: 25px}
+#error, #empty {display: flex; justify-content: center;}
 
 nav ul{margin:0; padding:0; list-style:none;}
 
 /* ----------------------------------------------Top Navigation------------------------------------- */
-
 #topnav{float:right; clear:right; padding-top:20px;}
 #topnav li{float:left; margin-right:14px; padding-right:15px; border-right:1px solid #666666;}
 #topnav li a:link, #topnav li a:visited, #topnav li a:hover{display:block; margin:0; padding:0; font-weight:normal;}
 #topnav li a:hover, #topnav li.active a{color:#FF9900; background-color:#FFFFFF;}
 #topnav li.last{margin:0; padding:0; border:none;}
 
-/* Top navigation for smaller resolutions */
-
-#topnav .mnav{display:block; position:relative; width:100%; height:30px; margin:0 auto; padding:5px; color:#FFFFFF; background-color:#232323; border:1px solid #494949; cursor:pointer; outline:none;}
-#topnav .mnav option{margin:5px 10px; cursor:pointer;}
-#topnav .mnav optgroup{margin-bottom:10px;}
-#topnav .mnav optgroup[label]{margin-left:12px; text-transform:uppercase; font-style:normal; font-weight:normal;}
-#topnav .mnav optgroup option{padding:0; text-transform:none;}
-
 /* ----------------------------------------------Pagination------------------------------------- */
-
 #container .pagination{display:block; width:100%; text-align:center; clear:both; font-family:Verdana, Geneva, sans-serif;}
 #container .pagination ul{margin:0; padding:0; list-style:none;}
 #container .pagination li{display:inline;}
@@ -238,4 +209,4 @@ nav ul{margin:0; padding:0; list-style:none;}
 #container .pagination .next{margin:0;}
 #container .pagination a, #container .pagination .current strong, #container .pagination .splitter strong{display:inline-block; padding:2px 6px; margin:0 2px 0 0;}
 #container .pagination a{border:1px solid #DFDFDF;}
-#container .pagination .current a {border-color: black};
+#container .pagination .current a {border-color: black}

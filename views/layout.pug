@@ -1,58 +1,60 @@
 doctype html
 html(lang='en')
-  head
-    meta(charset='UTF-8')
-    meta(name='viewport' content='width=device-width, initial-scale=1.0')
-    title Social Pets
-    link(rel="icon" href="/images/favicon.png")
-    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous')
-    link(rel='stylesheet' href='/stylesheets/layout.css'  type='text/css')
-    link(rel='stylesheet' href='/stylesheets/mediaqueries.css' type='text/css' media='all')
-  body
-    //-------------------- Header --------------------
-    .wrapper.row1
-      header#header
-        #hgroup
-            h1
-                a(href='/') Social Pet        
-            h2 Choose your favorite!
-        nav#topnav
-            ul.topnav.clear
-                li(class= active === "homepage" ? "active" : "")
-                    a(href='/')
-                        i#homeIcon.fas.fa-home  
-                        |  HOMEPAGE
-                li(class= active === "filter" ? "active" : "")
-                    a(href='/filter')
-                        i#filterIcon.fas.fa-search
-                        |  FILTER
-                li.last(class= active === "favorites" ? "active" : "")
-                    a(href='/favorites')
-                        i#galleryIcon.fas.fa-heart  
-                        |  FAVORITES
-        .clear
-    //-------------------- Content --------------------
-    block content
+    head
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title Social Pets
+        link(rel="icon" href="/images/favicon.png")
+        link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.13/css/all.css' integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp' crossorigin='anonymous')
+        link(rel='stylesheet' href='/stylesheets/layout.css'  type='text/css')
+        link(rel='stylesheet' href='/stylesheets/mediaqueries.css' type='text/css' media='all')
+    body
+        //-------------------- Header --------------------
+        .wrapper.row1
+            header#header
+                #hgroup
+                    h1
+                        a(href='/') Social Pet        
+                    h2 Choose your favorite!
+                nav#topnav
+                    ul.topnav.clear
+                        li(class= active === "homepage" ? "active" : "")
+                            a(href='/')
+                                i#homeIcon.fas.fa-home  
+                                |  HOMEPAGE
+                        li(class= active === "filter" ? "active" : "")
+                            a(href='/filter')
+                                i#filterIcon.fas.fa-search
+                                |  FILTER
+                        li.last(class= active === "favorites" ? "active" : "")
+                            a(href='/favorites')
+                                i#galleryIcon.fas.fa-heart  
+                                |  FAVORITES
+                .clear
+        //-------------------- Content --------------------
+        block content
         
-    //-------------------- Footer --------------------
-    .wrapper.row3
-      footer#copyright.clear
-        p.fl_left
-          | Copyright &copy; 2018 - All Rights Reserved - 
-          a(href='#') www.doghearts.com
-        p.fl_right
-          a(target='_blank' href='https://www.facebook.com/')
-            i.socialFooter.fab.fa-facebook
-          |  
-          a(target='_blank' href='https://www.instagram.com/')
-            i.socialFooter.fab.fa-instagram
-          |  
-          a(target='_blank' href='https://twitter.com/')
-            i.socialFooter.fab.fa-twitter
+        //-------------------- Footer --------------------
+        .wrapper.row3
+            footer#copyright.clear
+                p.fl_left
+                    | Copyright &copy; 2018 - All Rights Reserved - 
+                    a(href='#') www.github.com/georgicaceres
+                p.fl_right
+                    a(target='_blank' href='https://www.facebook.com/')
+                        i.socialFooter.fab.fa-facebook
+                    |  
+                    a(target='_blank' href='https://www.instagram.com/')
+                        i.socialFooter.fab.fa-instagram
+                    |  
+                    a(target='_blank' href='https://twitter.com/')
+                        i.socialFooter.fab.fa-twitter
+                    |  
+                    a(target='_blank' href='https://github.com/georgicaceres')
+                        i.socialFooter.fab.fa-github        
                 
-    //-------------------- Scripts --------------------
-    script(src='/javascripts/jquery-3.3.1.min.js')
-    script(src='/javascripts/jquery-mobilemenu.min.js')
-    script(src='/javascripts/favorites.js')
-    script(src='/javascripts/filter.js')
-    script(src='/javascripts/pagination.js')
+        //-------------------- Scripts --------------------
+        script(src='/javascripts/jquery-3.3.1.min.js')
+        script(src='/javascripts/favorites.js')
+        script(src='/javascripts/filter.js')
+        script(src='/javascripts/pagination.js')
