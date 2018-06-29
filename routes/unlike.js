@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const unlikeController = require('../controllers/unlikeController');
+const favoriteController = require('../controllers/favoriteController');
 
-/* POST home page. */
-router.post('/', unlikeController.unlike);
+/* POST for unlike a dog. */
+router.post('/', favoriteController.unlike);
 
 module.exports = router;

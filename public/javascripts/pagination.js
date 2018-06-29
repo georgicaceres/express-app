@@ -1,6 +1,7 @@
 function changePage(page) {
+    // favorites variable is true when the url contains 'favorites' word
     let favorites = window.location.href.indexOf('favorites') >= 0;
-    console.log(favorites);
+    // Save filter variables if exists. If not, save empty string.
     let breed = escape($('#selectBreed').val() || '');
     let size = $('#selectSize').val() || '';
     let age = $('#selectAge').val()|| '';

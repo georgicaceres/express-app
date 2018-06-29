@@ -2,6 +2,7 @@ const dogService = require('../services/dogService');
 const self = {};
 const imagesPerPage = 3;
 
+// Pagination function.
 function pagination(data, currentPage) {
     let page = parseInt(currentPage) || 1;
     let numPages = Math.ceil(data.length / imagesPerPage);
@@ -9,6 +10,7 @@ function pagination(data, currentPage) {
     return {page, numPages, dogs};
 }
 
+// Use filter from dogService, do pagination and render results
 self.filter = function(req, res, next) {
     let breeds = dogService.getBreeds();
     let dogs = dogService.getFilterDogs(req.query.breed, req.query.size, req.query.age, req.query.favorite === 'true');
@@ -24,12 +26,14 @@ self.filter = function(req, res, next) {
     }
 };
 
+// Get all dogs from dogService, do pagination and render results
 self.all = function(req, res, next) {
     let dogs = dogService.getAllDogs();
     let result = pagination(dogs, req.query.page);
     res.render('index', {active: 'homepage', ...result});
 }
 
+// Get favorites from dogService, do pagination and render results
 self.favorites = function(req, res, next) {
     let dogs = dogService.getFavorites();
     let result = pagination(dogs, req.query.page);
@@ -44,6 +48,7 @@ self.favorites = function(req, res, next) {
     }
 };
 
+// Get the specific objetct-dog from dogService and render the result
 self.getDetailOf = function(req, res, next) {
     let dog = dogService.getDetailOf(req.params.dog);
     res.render('detail', { dog })

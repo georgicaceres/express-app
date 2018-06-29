@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* 240-320px */
+/* 240 to 320px */
 @media screen and (min-width:240px) and (max-width:360px) {
 	#header, #container, #copyright{max-width:90%; margin:0 auto;}
 	#header #hgroup{display:block; width:100%; float:none; margin:0 0 15px 0; padding:0; text-align:center;}
@@ -46,10 +46,11 @@
 	#header, #container, #copyright{max-width:960px; margin:0 auto;}
 }
 
+/* General for < 800px */
 @media screen and (min-width:240px) and (max-width:800px) {
 	#gallery ul, .filterRow {flex-direction: column; align-items: center; justify-content: space-around;}
 	#images li, .colBox {margin-bottom: 10px;}
-	.row2 {margin-bottom: 85px}
 	#topnav ul {display: flex; justify-content: space-evenly}
 	#topnav li{padding-right:10px; border-right:1px solid #666666;}
+	.row2 {margin-bottom: 85px}
 }

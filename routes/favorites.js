@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const dogControllers = require('../controllers/dogControllers');
 
-/* GET home page. */
+/* GET favorites list. */
 router.get('/', dogControllers.favorites);
 
 module.exports = router;

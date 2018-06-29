@@ -7,4 +7,10 @@ self.like = function(req, res, next) {
   res.send(200)
 };
 
+self.unlike = function(req, res, next) {
+  let image = req.body.id;
+  dogService.unlikeDog(image);
+  res.send(200)
+};
+
 module.exports = self;

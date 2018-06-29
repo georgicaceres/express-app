@@ -77,39 +77,22 @@ h1, h2{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight:normal; line-he
 
 .filterRow {margin: 20px auto; margin-bottom: 0px; display: flex; justify-content: space-around; max-width: 960px}
 
-#filter, #view{
-    padding: 0;
-    overflow: hidden;
-    border-width: 0;
-    outline: none;
-    border-radius: 4px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
-    background-color: #fa745e;
-    color: #ecf0f1;
-    transition: background-color .3s;
-    cursor: pointer
+#filter, #view{padding: 0; overflow: hidden; border-width: 0; outline: none; border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .6); background-color: #fa745e; color: #ecf0f1;
+    transition: background-color .3s; cursor: pointer
 }
 
-#filter:hover, #view:hover, #filter:focus, #view:focus {background-color: #A966FF; color: black; font-weight: bold}
+#filter:hover, #view:hover, #filter:focus, #view:focus {background-color: #23d160; color: black; font-weight: bold}
 #filter > *, #view > *{position: relative}
 #filter span, #view span {display: block; padding: 12px 24px}
 
-#filter:before, #view:before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    display: block;
-    width: 0;
-    padding-top: 0;
-    border-radius: 100%;
-    background-color: rgba(236, 240, 241, .3);
+#filter:before, #view:before {content: ""; position: absolute; top: 50%; left: 50%; display: block; width: 0;
+    padding-top: 0; border-radius: 100%; background-color: rgba(236, 240, 241, .3); cursor: pointer;
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     -o-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    cursor: pointer
 }
 
 #filter:active:before, #view:active:before {
@@ -121,16 +104,8 @@ h1, h2{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight:normal; line-he
 
 .select {position: relative; width: 200px}
 
-.select-text {
-	position: relative;
-	font-family: inherit;
-	background-color: transparent;
-	width: 200px;
-	padding: 10px 10px 10px 0;
-	font-size: 16px;
-	border-radius: 0;
-	border: none;
-	border-bottom: 1px solid rgba(0,0,0, 0.12);
+.select-text {position: relative; font-family: inherit; background-color: transparent; width: 200px;
+	padding: 10px 10px 10px 0; font-size: 16px;	border-radius: 0; border: none;	border-bottom: 1px solid rgba(0,0,0, 0.12);
 }
 
 /* Remove focus */
@@ -140,20 +115,10 @@ h1, h2{margin:0 0 8px 0; padding:0; font-size:1.4em; font-weight:normal; line-he
 .select .select-text {appearance: none; -webkit-appearance:none}
 
 .select:after {
-	position: absolute;
-	top: 16px;
-	right: 10px;
-	/* Styling the down arrow */
-	width: 0;
-	height: 0;
-	padding: 0;
-	content: '';
-	border-left: 6px solid transparent;
-	border-right: 6px solid transparent;
-	border-top: 6px solid rgba(0, 0, 0, 0.12);
+	position: absolute;	top: 16px; right: 10px; width: 0; height: 0; padding: 0; content: '';
+    border-left: 6px solid transparent;	border-right: 6px solid transparent; border-top: 6px solid rgba(0, 0, 0, 0.12);
 	pointer-events: none;
 }
-
 
 /*----------------------Label----------------------- */
 .select-label {
